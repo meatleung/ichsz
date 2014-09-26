@@ -4,10 +4,10 @@
 		<div class="nav_z">
 			<ul id="navul" class="cl">
 				<li>
-					<a href="index.php/pageorg/index">首页</a>
+					<?php echo anchor('pageorg', '首页'); ?>
 				</li>
 				<li>
-					<a href="#">广告服务</a>
+					<?php echo anchor('pageorg', '广告服务', 'title="广告服务-IC回收站-呆滞IC回收广告展示平台",content="adservice"'); ?>
 				</li>
 				<li>
 					<a href="#">关于我们</a>
