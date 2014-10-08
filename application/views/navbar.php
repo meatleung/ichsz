@@ -7,13 +7,10 @@
 					<?php echo anchor('/', '首页'); ?>
 				</li>
 				<li>
-					<?php echo anchor('adservice', '广告服务');?>
+					<?php echo anchor('adservice', '广告收费标准');?>
 				</li>
 				<li>
-					<a href="#">关于我们</a>
-				</li>
-				<li>
-					<a href="#">联系方式</a>
+					<?php echo anchor('contactus', '联系方式');?>
 				</li>
 			</ul>
 		</div>
