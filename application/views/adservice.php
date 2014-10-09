@@ -17,3 +17,6 @@
 <tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
 </table>
 </center>
+<div class="longbanner">
+<?php echo "<img src='".base_url()."image/adservice.jpg'>"; ?><!--广告位置说明banner-->
+</div>
