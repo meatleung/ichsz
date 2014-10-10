@@ -39,7 +39,7 @@
 */
 
 $route['default_controller'] = "Pageorg";
-$route['404_override'] = '';
+$route['404_override'] = 'Notfound';
 
 
 /* End of file routes.php */
