@@ -14,7 +14,8 @@
 <script type="text/javascript" src="<?php echo base_url() ?>js/jquery.min.js"></script>
 <script type="text/javascript"  src="<?php echo base_url() ?>js/nav.js"></script>
 <style>
-    .longbanner {text-align:center;position:relative;top:17px;} <!--定义首页长banner样式-->
+    .longbanner {text-align:center;position:relative;top:1.5%;} <!--定义首页长banner样式-->
+	.ad {text-align:center;position:relative;top:3%;}<!--定义ad样式-->
 </style>
 
 </head>

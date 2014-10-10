@@ -5,17 +5,26 @@
 		{
 			parent::__construct();
 			$this->load->database();
+			$this->load->helper('url');
 		}
 	
-		public function get_ad()
+		public function get_ad($row,$line)
 		{
-			$id=array(0=>"0",1=>"1");
-			$altstr[2]=array();
-			for($i=0;$i<=1;$i++)
+			$adnum=$row*$line;
+			$id[$adnum]=array();
+			//查询目前共有多少收费广告
+			$qt = $this->db->count_all('adsp');
+			//创建0到qt的序列数组
+			$numbers = range (0,$qt-1); 
+			//shuffle 将数组顺序随机打乱
+			shuffle ($numbers);
+			$j=min($row,$qt)-1;
+			for($i=0;$i<=$j;$i++)
 			{
+				$id[$i] = base_url()."image/adsp/".$numbers[$i].".gif";
 				$this->db->select('company');
-				$this->db->where('id', $id[$i]);
-				$this->db->from('ad');
+				$this->db->where('id', $numbers[$i]); 
+				$this->db->from('adsp');
 				$alt=$this->db->get();
 				if ($alt->num_rows() > 0)
 				{
@@ -24,7 +33,16 @@
 				}
 				$altstr[$i]=$alt;
 			}
-			return $altstr;
+			if($row>$qt)
+			{
+				for(;$i<=$row;$i++)
+				{
+					$id[$i]=base_url()."image/adsp/0.gif";
+					$altstr[$i]="本广告位虚位以待";
+				}
+			}
+			$result=array($id,$altstr);
+			return $result;
 		}
 	}
 ?>

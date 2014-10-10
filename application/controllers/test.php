@@ -8,10 +8,8 @@ class Test extends CI_Controller {
   
    function index()
    {
-		$this->load->helper('url');
-		$this->load->model("Test_model");
-		$data['ad']=$this->Test_model->get_ad();
-		$this->load->view('testview',$data);
+		
+		$this->load->view('testview');
    }
 }
 ?>
