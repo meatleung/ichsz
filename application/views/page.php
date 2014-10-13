@@ -14,13 +14,10 @@
 <script type="text/javascript" src="<?php echo base_url() ?>js/jquery.min.js"></script>
 <script type="text/javascript"  src="<?php echo base_url() ?>js/nav.js"></script>
 <style>
-    .longbanner {text-align:center;position:relative;top:17px;} <!--定义首页长banner样式-->
+    .longbanner {text-align:center;position:relative;} <!--定义首页长banner样式-->
 </style>
 
 </head>
-<body>
-<?php echo $navbar; ?>
-<?php echo $content; ?>
-<?php echo $footer; ?>
+<body><?php echo $navbar; ?><?php echo $content; ?><?php echo $footer; ?>
 </body>
 </html>

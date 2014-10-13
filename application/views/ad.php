@@ -12,8 +12,7 @@
 		for($j=1; $j<=$row; $j++)
 		{
 			$k=($i-1)*$row+$j-1;
-			$adadd=base_url()."image/ad/".$ad[0][$k].".gif";
-			echo "<img src=".$adadd." alt=\"".$ad[1][$k]."\" />"; 
+			echo "<img src=".$ad[0][$k]." alt=\"".$ad[1][$k]."\" />"; 
 		}
 		echo "<br>";
 	}
