@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "Pageorg";
+$route['default_controller'] = "Ad";
 $route['404_override'] = 'Notfound';
 
 

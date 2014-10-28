@@ -10,17 +10,7 @@ class Test extends CI_Controller {
   
    function index()
    {
-		$ua = strtolower($_SERVER['HTTP_USER_AGENT']);
-		$botchar = "/(bot|crawl|spider|slurp|yahoo|sohu-search|lycos|robozilla)/i";
-		if(preg_match($botchar, $ua)) 
-		{
-			$data['str']="robot";
-		}
-		else
-		{
-			$data['str']="Norobot";
-		}
-		$this->load->view('testview',$data);
+		$this->load->view('testview');
    }
 }
 ?>

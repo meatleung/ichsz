@@ -1,22 +1,36 @@
-﻿<!--输出首页长banner-->
-<div class="longbanner">
-<?php echo "<img src='".base_url()."image/longbanner.gif'>"; ?><!--首页长banner-->
+﻿<div style="height:40px"></div>
+
+<div>
+	<ul style="left: 28%;">
+		<li style="width:200px">
+			想让有呆料的人联系你吗？
+		</li>
+		<li id="navp">
+			<?php echo anchor('contactus', '点击此处联系我们');?>
+		</li>
+		<li style="width:400px">
+			，将您的企业信息留在IC回收站，本服务永久免费。
+		</li>
+		<li id="navp">
+			<?php echo anchor('adservice', '点我了解服务详情');?>
+		</li>
+	</ul>
 </div>
+<div id="container">  
+	<?php	
+		echo $this->table->generate($results);
+	?>
+</div>
+<div style="height:20px"></div>
 
-<!--由控制器获取客户端网页可见宽度，并按分辨率计算屏幕展示广告的行列数-->
-<center>
-<?php	
-	for($i=1; $i<=$line; $i++)
-	{
-		for($j=1; $j<=$row; $j++)
-		{
-			$k=($i-1)*$row+$j-1;
-			echo "<img src=".$ad[0][$k]." alt=\"".$ad[1][$k]."\" />"; 
-		}
-		echo "<br>";
-	}
-
-echo "<input name='fresh' type='image' src='".base_url()."image/fresh.jpg' onclick='location.reload()'>";//刷新按钮
-?>
-</center>
-
+<div>
+	<ul style="left: 35%;">
+		<?php
+		echo $this->pagination->create_links();
+		//刷新按钮
+		/*
+		echo "<input name='fresh' type='image' src='".base_url()."image/refresh.png' onclick='location.reload()'>";
+		*/
+	?>
+	</ul>
+</div>

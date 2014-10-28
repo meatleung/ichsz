@@ -1,18 +1,23 @@
-﻿<!--输出首页长banner-->
-<div class="longbanner">
-<?php echo "<img src='".base_url()."image/longbanner.gif'>"; ?><!--首页长banner-->
+﻿<div style="height:40px"></div>
+
+<div>
+	<ul style="left: 28%;">
+		<li style="width:200px">
+			想让有呆料的人联系你吗？
+		</li>
+		<li id="navp">
+			<?php echo anchor('contactus', '点击此处联系我们');?>
+		</li>
+		<li style="width:400px">
+			，将您的企业信息留在IC回收站，本服务永久免费。
+		</li>
+		<li id="navp">
+			<?php echo anchor('adservice', '点我了解服务详情');?>
+		</li>
+	</ul>
 </div>
-<br>
-<center>
-<table class="hovertable">
-<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
-	<td>地址</td><td>深圳市龙岗区龙岗大道科伦特大厦4078室</td>
-</tr>
-<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
-	<td>电话</td><td>13652368174（梁生） 15817454826（李生）</td>
-</tr>
-<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
-<td>QQ</td><td>13652368174（梁生）</td>
-</tr>
-</table>
-</center>
+<div id="container">  
+	<?php	
+		echo $this->table->generate();
+	?>
+</div>
