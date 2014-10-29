@@ -1,0 +1,16 @@
+@charset "UTF-8";
+/*淘IC图片CSS*/
+.icgal{display:block;zoom:1}
+
+.jqzoom{text-decoration:none;float:left;}
+
+.clearfix:after{clear:both;content:".";display:block;font-size:0;height:0;line-height:0;visibility:hidden;}
+.clearfix{display:block;zoom:1}
+
+
+ul#thumblist{display:block;}
+ul#thumblist li{float:left;margin-right:2px;list-style:none;}
+ul#thumblist li a{display:block;}
+ul#thumblist li a.zoomThumbActive{
+    border:0;
+}

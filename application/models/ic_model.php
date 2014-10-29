@@ -14,10 +14,10 @@
 			return $query;
 		}
 		
-		public function get_icdetail($id)
+		public function get_icdetail($id,$str)
 		{
-			$query = $this->db->query('select id ,model ,brand ,lotid ,package ,print ,amount ,remarks ,name ,tel ,qq from icdig where id='.$id);     
-			return $query;
+			$query = $this->db->query('select '.$str.' from icdig where id='.$id);     
+			return $query->row();
 		}
 	}
 ?>

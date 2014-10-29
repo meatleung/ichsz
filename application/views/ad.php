@@ -27,10 +27,6 @@
 	<ul style="left: 35%;">
 		<?php
 		echo $this->pagination->create_links();
-		//刷新按钮
-		/*
-		echo "<input name='fresh' type='image' src='".base_url()."image/refresh.png' onclick='location.reload()'>";
-		*/
 	?>
 	</ul>
 </div>

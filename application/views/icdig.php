@@ -14,7 +14,7 @@
 	</ul>
 </div>
 
-<div style="height:60px"></div>
+<div style="height:40px"></div>
 
 <table style="width:960px;height:600px;margin:0 auto;">
 <tr>
@@ -25,7 +25,7 @@
 	?>
 	</div>
 </td>
-<td id="icdetail" style="width:680px"></td>
+<td id="icdetail" style="height:100%; width:100%;"></td>
 </tr>
 </table>
 

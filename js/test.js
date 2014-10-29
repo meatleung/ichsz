@@ -3,6 +3,7 @@ $(document).ready(function(){
 	var options = {  
             zoomType: 'standard',
             lens:true,
+            preloadImages: true,
             alwaysOn:false,
 			showEffect : 'fadein',  
             hideEffect: 'fadeout'  
@@ -20,28 +21,23 @@ $(document).ready(function(){
 			return;
 		}
 		
-		//获取呆料id以作为查询关键字
-		var row = $(this).prevAll().length+1;
-		var id;
-		if(row==2)
-		{
-			var tab = document.getElementById("icdig");
-            var line = $(this).parent().prevAll().length+1;
-			id = tab.rows[line].cells[0].innerText;
-		}
-		else
-		{
-			id = this.innerText;
-		}
-		
 		//向icdig传送查询的呆料id并取得返回值
-		var url="icdig/detail";
-		url=url+"?id="+id;
+		var url="test/detail";
+		url=url+"?id=1";
 		url=url+"&sid="+Math.random();
 		xmlHttp.onreadystatechange=stateChanged ;
-		xmlHttp.open("GET",url,true);
+		xmlHttp.open("GET",url,false);
 		xmlHttp.send(null);
-		
+		var options = {  
+            zoomType: 'standard',
+            lens:true,
+            preloadImages: true,
+            alwaysOn:false,
+			showEffect : 'fadein',  
+            hideEffect: 'fadeout'  
+		};  
+    $('.jqzoom').jqzoom(options);
+
 	})
 	
 	function stateChanged() 
@@ -49,14 +45,6 @@ $(document).ready(function(){
 		if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
 		{ 
 			document.getElementById("icdetail").innerHTML=xmlHttp.responseText;
-			var options = {  
-            zoomType: 'standard',
-            lens:true,
-            alwaysOn:false,
-			showEffect : 'fadein',  
-            hideEffect: 'fadeout'  
-			};  
-			$('.jqzoom').jqzoom(options);
 		} 
 	}
 
@@ -82,4 +70,6 @@ $(document).ready(function(){
 		}
 		return xmlHttp;
 	}
+	
+	
 })

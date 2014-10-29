@@ -6,6 +6,7 @@ img{vertical-align:middle;}
 em{font-style:normal;}
 ul{height:40px;position: relative;float: left;}
 ul li{display:block;width:112px;height:40px;text-align:center;list-style-type:none;line-height:40px;float: left;}
+p{line-height:20px;}
 p:link, p:visited{display:block;text-decoration:none;color:white;height:40px;}
 a:link, p:visited{text-decoration:none;color:yellow;}
 
