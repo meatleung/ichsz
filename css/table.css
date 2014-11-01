@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*
 html, body{
 	padding:0;
@@ -26,8 +25,6 @@ html, body{
 	margin:0 auto;
 }
 
-table {}
-
 .zebra {
     border: 1px solid #555;
 	/*以下原为上述table属性，现已移至zebra中*/
@@ -41,7 +38,8 @@ table {}
 .zebra td {
     border-left: 1px solid #555;
     border-top: 1px solid #555;
-    padding: 10px;
+    width:auto;
+	height:50px;
     text-align: center;    
 }
 

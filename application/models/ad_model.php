@@ -8,10 +8,21 @@
 			$this->load->helper('url');
 		}
 	
-		public function get_ad($num, $offset)
+		public function get_ad($str)
 		{
-			$this->db->from('ad')->limit($num, $offset);
-			$query = $this->db->get();       
+			$query = $this->db->query('select '.$str.' from ad'); 
+			return $query;
+		}
+		
+		public function get_massic($str)
+		{
+			$query = $this->db->query('select '.$str.' from massic'); 
+			return $query;
+		}
+		
+		public function get_contact($str,$id)
+		{
+			$query = $this->db->query('select '.$str.' from massic where id='.$id); 
 			return $query;
 		}
 	}
