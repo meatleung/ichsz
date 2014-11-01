@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "Ad";
+$route['default_controller'] = "icdig";
 $route['404_override'] = 'Notfound';
 
 

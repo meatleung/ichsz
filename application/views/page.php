@@ -4,8 +4,13 @@
 <?php echo $head; ?>
 </head>
 <body>
-<?php echo $navbar; ?>
-<?php echo $content; ?>
-<?php echo $footer; ?>
+<table class="container">
+<tr><td>
+<?php echo $navbar;?>
+</tr></td><tr><td>
+<?php echo $content;?>
+</tr></td><tr><td>
+<?php echo $footer;?>
+</tr></td></table>
 </body>
 </html>

@@ -8,7 +8,7 @@
 <link rel="shortcut icon" href="<?php echo base_url() ?>favicon.ico"/>
 <link rel="bookmark" href="<?php echo base_url() ?>favicon.ico"/>
 
-<!--导入导航条CSS样式-->
+<!--导入基本CSS样式-->
 <link href="<?php echo base_url() ?>css/main.css" rel="stylesheet" type="text/css" />
 
 <?php echo $head; ?>
