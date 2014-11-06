@@ -1,4 +1,4 @@
-﻿<div style="text-align:center;">
+<div style="text-align:center;">
 <p id="nav">
 <span>仓库的IC呆料卖不掉？</span>
 <span><?php echo anchor('contactus', '点击此处');?></span>

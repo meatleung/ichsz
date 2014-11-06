@@ -17,14 +17,15 @@ class Ad extends CI_Controller {
 		$results = $this->ad_model->get_ad($str);
 		$data['results']=array();
 		$i=0;
+		$data['field']=array("name","tel","company","business");
 		foreach($results->result() as $row)
 		{
 			for($j=0;$j<count($data['field']);$j++,$i++)
 			{
-				if($data['field'][$j]!="qq"){$data['results'][$i]=$row->$data['field'][$j];}
+				if($data['field'][$j]!="name"){$data['results'][$i]=$row->$data['field'][$j];}
 				else
 				{
-					$data['results'][$i]=empty($row->qq)?"":$row->qq."<a target=\"_blank\" href=\"http://wpa.qq.com/msgrd?v=3&uin=".$row->qq."&site=qq&menu=yes\"><img src=".base_url()."image/qqtalk.png alt=\"点击这里给我发消息\" title=\"点击这里给我发消息\"/></a>";
+					$data['results'][$i]=$row->$data['field'][$j].(empty($row->qq)?"":"<a target=\"_blank\" href=\"http://wpa.qq.com/msgrd?v=3&uin=".$row->qq."&site=qq&menu=yes\"><img src=".base_url()."image/qqtalk.png alt=\"点击这里给我发消息\" title=\"点击这里给我发消息\"/></a>");
 				}
 			}
 		}
@@ -32,7 +33,7 @@ class Ad extends CI_Controller {
 		
 		//载入表格类
 		$this->load->library('table');
-		$this->table->set_heading('联系人', '电话', 'QQ','公司','回收范围');
+		$this->table->set_heading('联系人', '电话', '公司','回收范围');
 		$this->table->set_caption('IC回收企业信息表');
 		$tmpl = array ('table_open' => '<table class="zebra">');
 		$this->table->set_template($tmpl);

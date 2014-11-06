@@ -4,6 +4,7 @@ body{font-family:"微软雅黑", Times New Roman, Times;background:url(../image/
 img{vertical-align:middle;text-decoration:none;display:inline-block;*display:inline;*zoom:1;}
 em{font-style:normal;}
 p{}
+a:link,a:visited{color:white;}
 /*a:link, a:visited{text-decoration:none;display:inline-block;*display:inline;*zoom:1;color:white;line-height:40px;width:110px;height:40px;text-align:center;}
 a:hover,a:active{text-decoration:none;display:inline-block;*display:inline;*zoom:1;color:black;line-height:40px;background-color:white;width:110px;height:40px;text-align:center;}*/
 ul, ul li{list-style-type:none;}

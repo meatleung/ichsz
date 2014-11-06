@@ -8,7 +8,8 @@ $(document).ready(function(){
             hideEffect: 'fadeout'  
     };  
     $('.jqzoom').jqzoom(options);
-
+	
+	var xmlHttp;
 	//IC呆料被点击时
     $("div[id^='index']").click(function()
 	{
@@ -26,9 +27,8 @@ $(document).ready(function(){
 			todelete.parentNode.removeChild(todelete);
 		}
 		//向icdig传送查询的呆料id并取得返回值
-		var url="icdig/detail";
-		url=url+"?id="+id;
-		url=url+"&sid="+Math.random();
+		var temp = document.URL;
+		var url='index.php/icdig/detail/'+id;
 		xmlHttp.onreadystatechange=stateChanged ;
 		xmlHttp.open("GET",url,true);
 		xmlHttp.send(null);
@@ -58,7 +58,6 @@ $(document).ready(function(){
 
 	function GetXmlHttpObject()
 	{
-		var xmlHttp=null;
 		try
 		{
 			// Firefox, Opera 8.0+, Safari

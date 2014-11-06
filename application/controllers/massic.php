@@ -8,7 +8,8 @@ class Massic extends CI_Controller {
 		$this->load->database();
 		$this->load->library('table');
 		$this->load->model('ad_model');
-		$this->load->model('ic_model');
+		//$this->load->model('ic_model');
+		$this->load->helper('download');
 	}
 	
    function index()
@@ -18,19 +19,20 @@ class Massic extends CI_Controller {
 		$results = $this->ad_model->get_massic($str);
 		$data['results']=array();
 		$i=0;
+		$data['field']=array("name","tel","company","business","id");
 		foreach($results->result() as $row)
 		{
 			for($j=0;$j<count($data['field']);$j++,$i++)
 			{
-				if(($data['field'][$j]!="qq")&($data['field'][$j]!="id"))
+				if(($data['field'][$j]!="name")&($data['field'][$j]!="id"))
 				{$data['results'][$i]=$row->$data['field'][$j];}
-				elseif($data['field'][$j]=="qq")
+				elseif($data['field'][$j]=="name")
 				{
-					$data['results'][$i]=empty($row->qq)?"":$row->qq."<a target=\"_blank\" href=\"http://wpa.qq.com/msgrd?v=3&uin=".$row->qq."&site=qq&menu=yes\"><img src=".base_url()."image/qqtalk.png alt=\"点击这里给我发消息\" title=\"点击这里给我发消息\"/></a>";
+					$data['results'][$i]=$row->$data['field'][$j].(empty($row->qq)?"":"<a target=\"_blank\" href=\"http://wpa.qq.com/msgrd?v=3&uin=".$row->qq."&site=qq&menu=yes\"><img src=".base_url()."image/qqtalk.png alt=\"点击这里给我发消息\" title=\"点击这里给我发消息\"/></a>");
 				}
-				else
+				elseif($data['field'][$j]=="id")
 				{
-					$data['results'][$i]="<p class=\"download\">".anchor('massic/excel/'.$row->id, '下载')."</p>";
+					$data['results'][$i]='<a class="download" href='.base_url('excel/'.$row->id.'.xls').'>下载</a>';
 				}
 			}
 		}
@@ -38,15 +40,17 @@ class Massic extends CI_Controller {
 		
 		//载入表格类
 		$this->load->library('table');
-		$this->table->set_heading('联系人', '电话', 'QQ','公司','呆料主要内容','呆料清单');
+		$this->table->set_heading('联系人', '电话','公司','呆料内容','呆料清单');
 		$this->table->set_caption('批量呆料信息表');
 		$tmpl = array ('table_open' => '<table class="zebra" style="width:960px;margin:0 auto">');
 		$this->table->set_template($tmpl);
 				
-		$data['title']= "大量呆料-IC回收站-IC呆料集散地";
+		$data['title']= "批量呆料-IC回收站-IC呆料集散地";
 		$data['head']="
 		<!--导入表格CSS-->
 		<link rel=\"stylesheet\" href=\"".base_url()."css/table.css\" type=\"text/css\">
+		<!--导入jquery文件-->
+		<script src=\"http://libs.baidu.com/jquery/2.0.3/jquery.min.js\"></script>
 		<!--导入icdig的js文件-->
 		<script src=\"".base_url()."js/massic.js\" type=\"text/javascript\"></script>";
 		$data['head']=$this->load->view('head',$data,true);
@@ -56,7 +60,7 @@ class Massic extends CI_Controller {
 		$this->load->view('page',$data);
    }
    
-   function excel()
+	function excel()
 	{
 		$data['id']=$this->uri->segment(3);
 		$data['field']=array("model","brand","lotid","package","print","amount","remarks");
@@ -112,5 +116,4 @@ class Massic extends CI_Controller {
 		$objWriter->save('php://output');
 	}
 }
-
 ?>

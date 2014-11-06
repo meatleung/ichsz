@@ -5,10 +5,10 @@
 <title><?php echo $title; ?></title>
 
 <!--设置网页小图标、书签图标-->
-<link rel="shortcut icon" href="<?php echo base_url() ?>favicon.ico"/>
-<link rel="bookmark" href="<?php echo base_url() ?>favicon.ico"/>
+<link rel="shortcut icon" href="<?php echo base_url("favicon.ico"); ?>"/>
+<link rel="bookmark" href="<?php echo base_url("favicon.ico"); ?>"/>
 
 <!--导入基本CSS样式-->
-<link href="<?php echo base_url() ?>css/main.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo base_url("css/main.css"); ?>" rel="stylesheet" type="text/css" />
 
 <?php echo $head; ?>

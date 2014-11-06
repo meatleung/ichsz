@@ -35,9 +35,9 @@ class Icdig extends CI_Controller {
 		$data['title']= "淘IC-IC回收站-IC呆料集散地";
 		$data['head']= "
 		<!--从百度CDN导入jquery(jqzoom需要jquery为1.6.0版本)-->
-		<script src=\"http://libs.baidu.com/jquery/1.6.0/jquery.js\"></script>
+		<script src=\"http://libs.baidu.com/jquery/1.6.0/jquery.js\" type=\"text/javascript\"></script>
 		<!--导入jqzoom的js、css文件-->
-		<script src=\"".base_url()."js/jqzoom/jquery.jqzoom-core.js\"type=\"text/javascript\"></script>
+		<script src=\"".base_url()."js/jqzoom/jquery.jqzoom-core.js\" type=\"text/javascript\"></script>
 		<link rel=\"stylesheet\" href=\"".base_url()."css/jquery.jqzoom.css\" type=\"text/css\">
 		<!--导入icdig的js文件-->
 		<script src=\"".base_url()."js/icdig.js\" type=\"text/javascript\"></script>
@@ -54,7 +54,7 @@ class Icdig extends CI_Controller {
    
    function detail()
    {
-		$data['id']=$_GET['id'];
+		$data['id']=$this->uri->segment(3);
 		//定义要取得哪些信息，并传递给ic_model
 		$data['field']=array("id","model","brand","lotid","package","print","amount","remarks","name","tel","qq");
 		$data['fieldname']=array("id","型号","品牌","批号","封装","丝印","数量","备注","联系人","电话","qq");
