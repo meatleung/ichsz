@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "ad";
+$route['default_controller'] = "massic";
 $route['404_override'] = 'Notfound';
 
 

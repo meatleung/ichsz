@@ -4,8 +4,8 @@
 <!--
 <span><?php echo anchor(base_url(), '淘IC散料'); ?></span>
 -->
-<span><?php echo anchor(site_url('ad'), '收呆料'); ?></span>
-<span><?php echo anchor(site_url('massic'), '批量呆料'); ?></span>
+<span><?php echo anchor(site_url('massic'), 'OEM呆料'); ?></span>
+<span><?php echo anchor(site_url('ad'), '呆料盟友'); ?></span>
 <span><?php echo anchor(site_url('contactus'), '联系我们'); ?></span>
 </p>
 </div>
