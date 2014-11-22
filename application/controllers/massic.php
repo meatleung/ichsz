@@ -14,12 +14,12 @@ class Massic extends CI_Controller {
 	
    function index()
    {
-		$data['field']=array("name","tel","qq","company","business","id");
+		$data['field']=array("date","name","tel","qq","company","business","id");
 		$str=implode(",",$data['field']);
 		$results = $this->ad_model->get_massic($str);
 		$data['results']=array();
 		$i=0;
-		$data['field']=array("name","tel","company","business","id");
+		$data['field']=array("date","name","tel","company","business","id");
 		foreach($results->result() as $row)
 		{
 			for($j=0;$j<count($data['field']);$j++,$i++)
@@ -28,7 +28,7 @@ class Massic extends CI_Controller {
 				{$data['results'][$i]=$row->$data['field'][$j];}
 				elseif($data['field'][$j]=="name")
 				{
-					$data['results'][$i]=$row->$data['field'][$j].(empty($row->qq)?"":"<a target=\"_blank\" href=\"http://wpa.qq.com/msgrd?v=3&uin=".$row->qq."&site=qq&menu=yes\"><img src=".base_url()."image/qqtalk.png alt=\"点击这里给我发消息\" title=\"点击这里给我发消息\"/></a>");
+					$data['results'][$i]=$row->$data['field'][$j].(empty($row->qq)?"":"<a target=\"_blank\" href=\"tencent://message/?uin=".$row->qq."&site=qq&menu=yes\"><img border=\"0\" src=\"".base_url()."/image/qqtalk.png\" alt=\"点击这里给我发消息\" title=\"点击这里给我发消息\"/></a>");
 				}
 				elseif($data['field'][$j]=="id")
 				{
@@ -40,8 +40,8 @@ class Massic extends CI_Controller {
 		
 		//载入表格类
 		$this->load->library('table');
-		$this->table->set_heading('联系人', '电话','公司','呆料内容','呆料清单');
-		$this->table->set_caption('批量呆料信息表');
+		$this->table->set_heading('呆料录入日期','联系人', '电话','公司','呆料内容','呆料清单');
+		$this->table->set_caption('OEM呆料信息表');
 		$tmpl = array ('table_open' => '<table class="zebra" style="width:960px;margin:0 auto">');
 		$this->table->set_template($tmpl);
 				

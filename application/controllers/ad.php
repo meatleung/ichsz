@@ -25,7 +25,7 @@ class Ad extends CI_Controller {
 				if($data['field'][$j]!="name"){$data['results'][$i]=$row->$data['field'][$j];}
 				else
 				{
-					$data['results'][$i]=$row->$data['field'][$j].(empty($row->qq)?"":"<a target=\"_blank\" href=\"http://wpa.qq.com/msgrd?v=3&uin=".$row->qq."&site=qq&menu=yes\"><img src=".base_url()."image/qqtalk.png alt=\"点击这里给我发消息\" title=\"点击这里给我发消息\"/></a>");
+					$data['results'][$i]=$row->$data['field'][$j].(empty($row->qq)?"":"<a target=\"_blank\" href=\"tencent://message/?uin=".$row->qq."&site=qq&menu=yes\"><img border=\"0\" src=\"".base_url()."/image/qqtalk.png\" alt=\"点击这里给我发消息\" title=\"点击这里给我发消息\"/></a>");
 				}
 			}
 		}
